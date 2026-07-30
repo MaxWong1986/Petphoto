@@ -74,6 +74,16 @@
     .booking .eyebrow { margin-bottom:16px; }
     .booking h2 { margin-bottom:21px; }
     .booking p { max-width:510px; margin:0 auto 30px; color:var(--muted); font-size:16px; line-height:1.8; }
+    .wall-art { background:#f3eee6; padding:clamp(82px,11vw,130px) clamp(22px,7vw,112px); }
+    .wall-art-inner { max-width:1210px; margin:0 auto; }
+    .wall-art-intro { max-width:610px; margin:0 auto 48px; text-align:center; }
+    .wall-art h2 { margin:16px 0 18px; }
+    .wall-art-intro p { color:var(--muted); font-size:16px; line-height:1.8; }
+    .wall-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .wall-grid figure { margin:0; overflow:hidden; border-radius:3px; background:#ddd3c5; box-shadow:0 12px 32px rgba(58,46,34,.10); }
+    .wall-grid img { display:block; width:100%; height:100%; aspect-ratio:1.27; object-fit:cover; transition:transform .55s ease; }
+    .wall-grid figure:hover img { transform:scale(1.025); }
+    .wall-art-note { margin:31px auto 0; max-width:610px; text-align:center; color:var(--muted); font-size:14px; line-height:1.75; }
     .fine-print { margin-top:23px!important; font-size:11px!important; }
     .footer { padding:27px clamp(22px,6vw,88px); border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:16px; color:var(--muted); font:10px/1.6 "DM Mono",monospace; letter-spacing:.08em; }
     .contact-modal { position:fixed; inset:0; z-index:30; display:none; align-items:center; justify-content:center; padding:22px; background:rgba(38,53,46,.38); }
@@ -92,7 +102,7 @@
       .gallery { padding:0 12px 82px; } .section-head { padding:0 12px; display:block; } .section-head p { margin-top:17px; }
       .feature-grid { grid-template-columns:1fr 1fr; grid-template-rows:300px 230px 230px; gap:8px; } .photo.tall { grid-row:span 1; grid-column:span 2; } .photo.wide { grid-column:span 2; }
       .full-work { padding:0 24px 85px; } .all-grid { columns:2 140px; column-gap:8px; } .all-grid figure { margin-bottom:8px; }
-      .session { padding:80px 24px; } .session-inner { grid-template-columns:1fr; gap:40px; } .booking { padding:90px 25px; } .footer { display:block; } .footer span + span { display:block; margin-top:6px; }
+      .session { padding:80px 24px; } .session-inner { grid-template-columns:1fr; gap:40px; } .wall-art { padding:80px 24px; } .wall-art-intro { margin-bottom:30px; } .wall-grid { gap:9px; } .booking { padding:90px 25px; } .footer { display:block; } .footer span + span { display:block; margin-top:6px; }
     }
   </style>
 </head>
@@ -116,7 +126,9 @@
 
     <section class="session" id="session"><div class="session-inner"><div class="session-copy"><span class="eyebrow">03 / The session</span><h2>One beautiful hour with your best friend.</h2><p>This is not about making your dog sit still and smile. It is a relaxed outdoor session shaped around who they are — bouncy, bashful, curious, muddy-pawed, and completely loved.</p><p>We will choose a Calgary location that feels right, then let the good moments find us.</p></div><div class="card"><span class="card-label">THE CALGARY DOG STORY SESSION</span><div class="price">$300</div><span class="currency">CAD + GST</span><ul class="includes"><li>Up to 60 minutes outdoors in Calgary</li><li>Dog and owner/family included</li><li>Up to 2 dogs from one household</li><li>At least 20 hand-edited high-resolution images</li><li>Private online gallery within 7 days</li><li>Natural & Timeless or Warm & Golden finish</li></ul></div></div></section>
 
-    <section class="booking" id="book"><span class="eyebrow">04 / Let’s remember this</span><h2>You are their whole world.</h2><p>Their life may be only one chapter of yours. But to them, you are the whole story — the familiar voice, the favourite walk, the safe place, and the person they wait for at the door.</p><p>Let’s keep a little piece of this beautiful chapter, exactly as it is now.</p><button class="button" type="button" data-open-contact>Start an inquiry →</button><p class="fine-print">Calgary and surrounding area · Sessions are tailored to your dog.</p></section>
+    <section class="wall-art" id="wall-art"><div class="wall-art-inner"><div class="wall-art-intro"><span class="eyebrow">04 / Made to live with</span><h2>From your gallery<br>to your home.</h2><p>Your dog’s story deserves more than a folder on your phone. The images you love most can become a quiet, beautiful part of the home you share.</p></div><div class="wall-grid"><figure><img src="wall-art/wall-art-01.jpg" alt="A framed dog portrait in a warm living room" loading="lazy"></figure><figure><img src="wall-art/wall-art-02.jpg" alt="A framed dog portrait in a welcoming entryway" loading="lazy"></figure><figure><img src="wall-art/wall-art-03.jpg" alt="A framed dog portrait above an oak sideboard" loading="lazy"></figure><figure><img src="wall-art/wall-art-04.jpg" alt="A framed dog portrait in a calm bedroom" loading="lazy"></figure><figure><img src="wall-art/wall-art-05.jpg" alt="A framed dog portrait above a sofa" loading="lazy"></figure><figure><img src="wall-art/wall-art-06.jpg" alt="A framed dog portrait on a vintage dresser" loading="lazy"></figure><figure><img src="wall-art/wall-art-07.jpg" alt="A framed dog portrait in a family room" loading="lazy"></figure><figure><img src="wall-art/wall-art-08.jpg" alt="A framed dog portrait in a home office" loading="lazy"></figure></div><p class="wall-art-note">Framed prints, wall art and heirloom albums will be available after your session — so your favourite image can keep making you smile, every day.</p></div></section>
+
+    <section class="booking" id="book"><span class="eyebrow">05 / Let’s remember this</span><h2>You are their whole world.</h2><p>Their life may be only one chapter of yours. But to them, you are the whole story — the familiar voice, the favourite walk, the safe place, and the person they wait for at the door.</p><p>Let’s keep a little piece of this beautiful chapter, exactly as it is now.</p><button class="button" type="button" data-open-contact>Start an inquiry →</button><p class="fine-print">Calgary and surrounding area · Sessions are tailored to your dog.</p></section>
   </main>
   <footer class="footer"><span>GOOD DOG STUDIO © 2026</span><span>CALGARY, ALBERTA · DOG PORTRAITURE</span></footer>
   <div class="contact-modal" id="contact-modal" aria-hidden="true">
