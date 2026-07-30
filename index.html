@@ -20,6 +20,154 @@
     .brand small { color:var(--muted); margin-top:5px; letter-spacing:.11em; }
     .nav-links { display:flex; align-items:center; gap:25px; color:#4b5750; font-size:13px; }
     .nav-links a:hover { color:var(--sage-deep); }
+    .nav-book,.button { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 18px; border:1px solid var(--ink); font:500 13px "DM Sans",system-ui,sans-serif; cursor:pointer; transition:.2s ease; }
+    .nav-book { background:var(--ink); color:var(--white); border-color:var(--ink); }
+    .nav-book:hover { background:var(--sage-deep); border-color:var(--sage-deep); }
+    .hero { max-width:1440px; margin:0 auto; min-height:min(750px,calc(100vh - 76px)); padding:clamp(30px,5vw,76px) clamp(22px,7vw,112px); display:grid; grid-template-columns:minmax(300px,.92fr) minmax(360px,1.08fr); align-items:center; gap:clamp(35px,7vw,112px); }
+    .hero-copy { padding:20px 0; max-width:570px; }
+    .eyebrow { color:var(--sage-deep); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { margin:17px 0 24px; font:500 clamp(51px,6.1vw,90px)/.99 "Playfair Display",serif; letter-spacing:-.06em; }
+    h2 { font:500 clamp(38px,4.5vw,66px)/1.06 "Playfair Display",serif; letter-spacing:-.055em; }
+    h3 { font:500 27px/1.14 "Playfair Display",serif; letter-spacing:-.035em; }
+    .hero p { max-width:460px; color:#536158; font-size:17px; line-height:1.8; margin-bottom:31px; }
+    .button { background:var(--ink); border-color:var(--ink); color:var(--white); padding:15px 21px; }
+    .button:hover { transform:translateY(-2px); background:var(--sage-deep); border-color:var(--sage-deep); }
+    .hero-image { min-height:530px; height:clamp(530px,62vw,700px); border-radius:180px 180px 18px 18px; overflow:hidden; background:var(--warm); position:relative; }
+    .hero-image img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 40%; filter:saturate(.92); }
+    .hero-image span { position:absolute; right:20px; bottom:18px; padding:9px 11px; background:rgba(255,253,250,.9); border-radius:4px; color:#536158; font:10px "DM Mono",monospace; letter-spacing:.08em; }
+    .intro { max-width:1230px; margin:0 auto; padding:clamp(85px,13vw,165px) clamp(22px,7vw,88px); display:grid; grid-template-columns:.7fr 1.3fr; gap:clamp(32px,8vw,130px); }
+    .intro-copy p { max-width:660px; color:#536158; font-size:18px; line-height:1.85; }
+    .promise { margin-top:32px; padding:22px 24px; border-left:3px solid var(--peach); background:#f8f4ed; color:var(--ink)!important; font-size:16px!important; }
+    .gallery { padding:0 clamp(12px,3vw,46px) clamp(100px,13vw,165px); }
+    .section-head { max-width:1230px; margin:0 auto 34px; padding:0 clamp(10px,6vw,82px); display:flex; justify-content:space-between; align-items:end; gap:30px; }
+    .section-head p { max-width:290px; color:var(--muted); font-size:14px; line-height:1.75; margin:0; }
+    .feature-grid { display:grid; grid-template-columns:1.25fr .75fr .75fr; grid-template-rows:360px 360px; gap:13px; }
+    figure { margin:0; }
+    .photo { overflow:hidden; border-radius:4px; background:var(--warm); }
+    .photo img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .65s ease; }
+    .photo:hover img { transform:scale(1.035); }
+    .photo.tall { grid-row:span 2; }
+    .photo.wide { grid-column:span 2; }
+    .full-work { max-width:1230px; margin:0 auto; padding:0 clamp(22px,7vw,88px) clamp(100px,12vw,150px); }
+    details { border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; list-style:none; padding:22px 0; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:600; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:"+"; font:400 28px/1 "DM Sans",sans-serif; color:var(--sage-deep); }
+    details[open] summary::after { content:"–"; }
+    .all-grid { columns:4 210px; column-gap:13px; padding:8px 0 28px; }
+    .all-grid figure { break-inside:avoid; margin:0 0 13px; overflow:hidden; border-radius:3px; background:var(--warm); }
+    .all-grid img { width:100%; height:auto; display:block; transition:transform .55s ease; }
+    .all-grid figure:hover img { transform:scale(1.03); }
+    .session { background:var(--sage); padding:clamp(82px,11vw,145px) clamp(22px,7vw,112px); }
+    .session-inner { max-width:1210px; margin:0 auto; display:grid; grid-template-columns:1fr .9fr; align-items:center; gap:clamp(45px,9vw,140px); }
+    .session h2 { margin:16px 0 24px; }
+    .session-copy>p { color:#4d5d52; font-size:16px; line-height:1.85; max-width:490px; }
+    .card { padding:clamp(30px,4vw,50px); background:var(--white); border-radius:5px; box-shadow:0 18px 40px rgba(46,65,50,.08); }
+    .card-label { font:500 10px/1.4 "DM Mono",monospace; color:var(--sage-deep); letter-spacing:.13em; }
+    .price { margin:20px 0 3px; font:500 clamp(70px,7vw,105px)/.9 "Playfair Display",serif; letter-spacing:-.075em; }
+    .currency { color:var(--muted); font:500 11px "DM Mono",monospace; letter-spacing:.11em; }
+    .includes { list-style:none; padding:0; margin:29px 0 0; border-top:1px solid var(--line); }
+    .includes li { padding:13px 0; border-bottom:1px solid var(--line); color:#445249; font-size:14px; }
+    .includes li::before { content:"•"; color:var(--peach); font-size:18px; padding-right:11px; vertical-align:-1px; }
+    .booking { max-width:900px; margin:0 auto; padding:clamp(90px,13vw,170px) 22px; text-align:center; }
+    .booking .eyebrow { margin-bottom:16px; }
+    .booking h2 { margin-bottom:21px; }
+    .booking p { max-width:510px; margin:0 auto 30px; color:var(--muted); font-size:16px; line-height:1.8; }
+    .fine-print { margin-top:23px!important; font-size:11px!important; }
+    .footer { padding:27px clamp(22px,6vw,88px); border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:16px; color:var(--muted); font:10px/1.6 "DM Mono",monospace; letter-spacing:.08em; }
+    .contact-modal { position:fixed; inset:0; z-index:30; display:none; align-items:center; justify-content:center; padding:22px; background:rgba(38,53,46,.38); }
+    .contact-modal.is-open { display:flex; }
+    .contact-card { width:min(100%,470px); padding:40px; border-radius:8px; background:var(--white); box-shadow:0 25px 60px rgba(23,34,27,.25); position:relative; text-align:left; }
+    .contact-card h3 { margin:14px 0; font-size:34px; }
+    .contact-card p { color:var(--muted); line-height:1.7; margin:0 0 24px; }
+    .contact-email { display:block; padding:16px; margin-bottom:11px; border:1px solid var(--line); border-radius:3px; color:var(--ink); font:500 15px "DM Mono",monospace; overflow-wrap:anywhere; }
+    .copy-email { width:100%; padding:14px; border:1px solid var(--ink); background:var(--ink); color:var(--white); font:500 13px "DM Sans",system-ui,sans-serif; cursor:pointer; }
+    .contact-status { min-height:22px; margin:14px 0 0!important; color:var(--sage-deep)!important; font-size:13px; }
+    .modal-close { position:absolute; right:15px; top:14px; width:36px; height:36px; border:0; background:transparent; color:var(--muted); font-size:27px; cursor:pointer; }
+    @media (max-width:760px) {
+      .nav { height:67px; padding:0 21px; } .nav-links { display:none; } .brand { font-size:21px; } .nav-book { padding:10px 12px; font-size:12px; }
+      .hero { min-height:auto; padding:31px 22px 65px; grid-template-columns:1fr; gap:34px; } .hero-copy { order:2; padding:0; } .hero h1 { font-size:54px; } .hero-image { order:1; min-height:390px; height:58vh; border-radius:110px 110px 12px 12px; }
+      .intro { padding:85px 24px; grid-template-columns:1fr; gap:24px; } .intro-copy p { font-size:16px; }
+      .gallery { padding:0 12px 82px; } .section-head { padding:0 12px; display:block; } .section-head p { margin-top:17px; }
+      .feature-grid { grid-template-columns:1fr 1fr; grid-template-rows:300px 230px 230px; gap:8px; } .photo.tall { grid-row:span 1; grid-column:span 2; } .photo.wide { grid-column:span 2; }
+      .full-work { padding:0 24px 85px; } .all-grid { columns:2 140px; column-gap:8px; } .all-grid figure { margin-bottom:8px; }
+      .session { padding:80px 24px; } .session-inner { grid-template-columns:1fr; gap:40px; } .booking { padding:90px 25px; } .footer { display:block; } .footer span + span { display:block; margin-top:6px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#top">Good Dog Studio<small>Calgary · dog portraits</small></a>
+    <div class="nav-links"><a href="#work">Portfolio</a><a href="#session">The session</a><a href="#book">Get in touch</a></div>
+    <button class="nav-book" type="button" data-open-contact>Book a session →</button>
+  </nav>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow">Calgary outdoor dog photography</span><h1>For the dog<br>who feels like<br>home.</h1><p>Relaxed, honest photographs of the dog who knows your whole heart — made outdoors, at their pace, in the Calgary light.</p><button class="button" type="button" data-open-contact>Tell me about your dog <span>→</span></button></div>
+      <div class="hero-image"><img src="E328AD829BB3_CAMERAMARK.jpg" alt="A happy dog sitting in a red wagon by the lake"><span>CALGARY, ALBERTA</span></div>
+    </section>
+
+    <section class="intro"><span class="eyebrow">01 / The feeling</span><div class="intro-copy"><h2>The best photos are never really about posing.</h2><p>They are the ears that lift at a familiar sound, the sudden sprint across the grass, and the way your dog leans into you when the day is quiet.</p><p>I photograph dogs around Calgary — by the river, in golden parks, and on the trails they already love — so you can keep the personality you know by heart.</p><p class="promise">No pressure. No perfect behaviour required. Just your dog, being wonderfully themselves.</p></div></section>
+
+    <section class="gallery" id="work"><div class="section-head"><div><span class="eyebrow">02 / Selected work</span><h2>Small moments.<br>Big love.</h2></div><p>Every dog has a way of making an ordinary day feel like something worth keeping forever.</p></div><div class="feature-grid"><figure class="photo tall"><img src="001.jpg" alt="Two dogs sharing a quiet moment at sunset" loading="lazy"></figure><figure class="photo"><img src="074F419E7ED1_CAMERAMARK.jpg" alt="A dog enjoying Calgary's outdoors" loading="lazy"></figure><figure class="photo"><img src="24C0065714C7_CAMERAMARK.jpg" alt="A dog portrait in natural light" loading="lazy"></figure><figure class="photo wide"><img src="200597C5526D_CAMERAMARK.jpg" alt="A dog in a Calgary park" loading="lazy"></figure></div></section>
+
+    <section class="full-work"><details><summary>See the full collection of dog stories</summary><div class="all-grid" id="all-grid"></div></details></section>
+
+    <section class="session" id="session"><div class="session-inner"><div class="session-copy"><span class="eyebrow">03 / The session</span><h2>One beautiful hour with your best friend.</h2><p>This is not about making your dog sit still and smile. It is a relaxed outdoor session shaped around who they are — bouncy, bashful, curious, muddy-pawed, and completely loved.</p><p>We will choose a Calgary location that feels right, then let the good moments find us.</p></div><div class="card"><span class="card-label">THE CALGARY DOG STORY SESSION</span><div class="price">$300</div><span class="currency">CAD + GST</span><ul class="includes"><li>Up to 60 minutes outdoors in Calgary</li><li>Dog and owner/family included</li><li>Up to 2 dogs from one household</li><li>At least 20 hand-edited high-resolution images</li><li>Private online gallery within 7 days</li><li>Natural & Timeless or Warm & Golden finish</li></ul></div></div></section>
+
+    <section class="booking" id="book"><span class="eyebrow">04 / Let’s remember this</span><h2>They will not stay this age forever.</h2><p>Tell me your dog’s name, what they love, and the season you are dreaming of. We will make photographs that bring you right back to this chapter together.</p><button class="button" type="button" data-open-contact>Start an inquiry →</button><p class="fine-print">Calgary and surrounding area · Sessions are tailored to your dog.</p></section>
+  </main>
+  <footer class="footer"><span>GOOD DOG STUDIO © 2026</span><span>CALGARY, ALBERTA · DOG PORTRAITURE</span></footer>
+  <div class="contact-modal" id="contact-modal" aria-hidden="true">
+    <section class="contact-card" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+      <button class="modal-close" type="button" aria-label="Close inquiry panel" data-close-contact>×</button>
+      <span class="eyebrow">Start an inquiry</span>
+      <h3 id="contact-title">Tell me about your dog.</h3>
+      <p>Email Max with your dog’s name, a little about their personality, and the kind of Calgary session you are dreaming of.</p>
+      <a class="contact-email" href="mailto:hkmarketingltd@gmail.com?subject=Dog%20portrait%20session%20inquiry">hkmarketingltd@gmail.com</a>
+      <button class="copy-email" id="copy-email" type="button">Copy email address</button>
+      <p class="contact-status" aria-live="polite"></p>
+    </section>
+  </div>
+  <script>
+    const allPhotos = ["001.jpg","002.jpg","003.jpg","004.jpg","005.jpg","074F419E7ED1_CAMERAMARK.jpg","111111.jpg","200597C5526D_CAMERAMARK.jpg","2222.jpg","24C0065714C7_CAMERAMARK.jpg","333.jpg","44444.jpg","4497058F9955_CAMERAMARK.jpg","45CCB0DDF0EC_CAMERAMARK.jpg","474D3DFD80CD_CAMERAMARK.jpg","51425A0F2F34_CAMERAMARK.jpg","55555.jpg","60A57DB28BCB_CAMERAMARK.jpg","66666.jpg","6AD627539014_CAMERAMARK.jpg","7CC1A5325928_CAMERAMARK.jpg","7D91AE5E6173_CAMERAMARK.jpg","812BDDA9DA06_CAMERAMARK.jpg","89A7842CB16F_CAMERAMARK.jpg","8D7D259F04C9_CAMERAMARK.jpg","8FBFA24B81B4_CAMERAMARK.jpg","95F57EDA4999_CAMERAMARK.jpg","97C78CDF08E3_CAMERAMARK.jpg","999ED65CDDF4_CAMERAMARK.jpg","9CDA18D56D5B_CAMERAMARK.jpg","9D6237734A10_CAMERAMARK.jpg","A0676BDA7190_CAMERAMARK.jpg","A6C62670F3D6_CAMERAMARK.jpg","A7FB7541EB79_CAMERAMARK.jpg","A8315258AF65_CAMERAMARK.jpg","AB030A694753_CAMERAMARK.jpg","B080E1BE93D9_CAMERAMARK.jpg","B1972D1C9438_CAMERAMARK.jpg","B388A9D1F560_CAMERAMARK.jpg","B6DA0F4D489A_CAMERAMARK.jpg","B9D39D2EA825_CAMERAMARK.jpg","BD63308A30C9_CAMERAMARK.jpg","BD75438EB173_CAMERAMARK.jpg","BEF3FD7829E8_CAMERAMARK.jpg","C0993EC31A5A_CAMERAMARK.jpg","C2BC8919900F_CAMERAMARK.jpg","C389BCE6630C_CAMERAMARK.jpg","D9A0D52EC7FE_CAMERAMARK.jpg","DAE006186BD1_CAMERAMARK.jpg","E328AD829BB3_CAMERAMARK.jpg","EDC94B6A49E9_CAMERAMARK.jpg","F68B8940D088_CAMERAMARK.jpg","F6F37699B0F4_CAMERAMARK.jpg"];
+    document.getElementById("all-grid").innerHTML = allPhotos.map((photo, index) => `<figure><img src="${photo}" alt="Calgary dog portrait ${index + 1}" loading="lazy"></figure>`).join("");
+    const contactModal = document.getElementById("contact-modal");
+    const contactStatus = contactModal.querySelector(".contact-status");
+    const copyEmail = document.getElementById("copy-email");
+    const contactEmail = "hkmarketingltd@gmail.com";
+    const closeContact = () => { contactModal.classList.remove("is-open"); contactModal.setAttribute("aria-hidden", "true"); };
+    document.querySelectorAll("[data-open-contact]").forEach((button) => button.addEventListener("click", () => { contactModal.classList.add("is-open"); contactModal.setAttribute("aria-hidden", "false"); }));
+    document.querySelectorAll("[data-close-contact]").forEach((button) => button.addEventListener("click", closeContact));
+    contactModal.addEventListener("click", (event) => { if (event.target === contactModal) closeContact(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeContact(); });
+    copyEmail.addEventListener("click", async () => { await navigator.clipboard.writeText(contactEmail); contactStatus.textContent = "Email copied — paste it into your email app to get in touch."; });
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Relaxed, heartfelt outdoor dog photography in Calgary.">
+  <title>Good Dog Studio — Calgary Dog Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#26352e; --muted:#66736a; --paper:#fbfaf6; --warm:#f2ede4; --sage:#dce5d9; --sage-deep:#687b69; --peach:#eab79e; --line:#dedbd3; --white:#fffdfa; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:"DM Sans",system-ui,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .nav { height:76px; padding:0 clamp(22px,6vw,88px); display:flex; align-items:center; justify-content:space-between; background:rgba(251,250,246,.93); border-bottom:1px solid rgba(222,219,211,.8); position:sticky; top:0; z-index:10; backdrop-filter:blur(10px); }
+    .brand { font:500 24px/1 "Playfair Display",serif; letter-spacing:-.045em; }
+    .brand small,.eyebrow { display:block; font:500 10px/1.4 "DM Mono",monospace; letter-spacing:.13em; text-transform:uppercase; }
+    .brand small { color:var(--muted); margin-top:5px; letter-spacing:.11em; }
+    .nav-links { display:flex; align-items:center; gap:25px; color:#4b5750; font-size:13px; }
+    .nav-links a:hover { color:var(--sage-deep); }
     .nav-book,.button { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 18px; border:1px solid var(--ink); font-size:13px; transition:.2s ease; }
     .nav-book { background:var(--ink); color:var(--white); border-color:var(--ink); }
     .nav-book:hover { background:var(--sage-deep); border-color:var(--sage-deep); }
