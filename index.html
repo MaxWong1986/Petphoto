@@ -20,6 +20,7 @@
     .brand small { color:var(--muted); margin-top:5px; letter-spacing:.11em; }
     .nav-links { display:flex; align-items:center; gap:18px; color:#4b5750; font-size:12px; }
     .nav-links a:hover { color:var(--sage-deep); }
+    .mobile-menu { display:none; }
     .nav-book,.button { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 18px; border:1px solid var(--ink); font:500 13px "DM Sans",system-ui,sans-serif; cursor:pointer; transition:.2s ease; }
     .nav-book { background:var(--ink); color:var(--white); border-color:var(--ink); }
     .nav-book:hover { background:var(--sage-deep); border-color:var(--sage-deep); }
@@ -96,7 +97,7 @@
     .contact-status { min-height:22px; margin:14px 0 0!important; color:var(--sage-deep)!important; font-size:13px; }
     .modal-close { position:absolute; right:15px; top:14px; width:36px; height:36px; border:0; background:transparent; color:var(--muted); font-size:27px; cursor:pointer; }
     @media (max-width:760px) {
-      .nav { height:67px; padding:0 21px; } .nav-links { display:none; } .brand { font-size:21px; } .nav-book { padding:10px 12px; font-size:12px; }
+      .nav { height:67px; padding:0 21px; } .nav-links { display:none; } .brand { font-size:21px; } .nav-book { padding:10px 12px; font-size:12px; } .mobile-menu { display:block; position:relative; margin-left:auto; margin-right:10px; } .mobile-menu summary { cursor:pointer; list-style:none; color:var(--ink); font-size:12px; font-weight:600; } .mobile-menu summary::-webkit-details-marker { display:none; } .mobile-menu > div { position:absolute; right:-10px; top:28px; width:190px; padding:16px; display:grid; gap:14px; background:var(--white); border:1px solid var(--line); border-radius:4px; box-shadow:0 16px 35px rgba(38,53,46,.13); font-size:13px; } .mobile-menu a:hover { color:var(--sage-deep); }
       .hero { min-height:auto; padding:31px 22px 65px; grid-template-columns:1fr; gap:34px; } .hero-copy { order:2; padding:0; } .hero h1 { font-size:54px; } .hero-image { order:1; min-height:390px; height:58vh; border-radius:110px 110px 12px 12px; }
       .intro { padding:85px 24px; grid-template-columns:1fr; gap:24px; } .intro-copy p { font-size:16px; }
       .gallery { padding:0 12px 82px; } .section-head { padding:0 12px; display:block; } .section-head p { margin-top:17px; }
@@ -109,7 +110,7 @@
 <body>
   <nav class="nav">
     <a class="brand" href="#top">Dog Stories by Max<small>Calgary · dog portraits</small></a>
-    <div class="nav-links"><a href="#work">Portfolio</a><a href="#session">The session</a><a href="family.html">Meet the Family</a><a href="dog-stories.html">Dog Stories</a><a href="#book">Get in touch</a></div>
+    <div class="nav-links"><a href="#work">Portfolio</a><a href="#session">The session</a><a href="family.html">Meet the Family</a><a href="dog-stories.html">Dog Stories</a><a href="#book">Get in touch</a></div><details class="mobile-menu"><summary>Menu</summary><div><a href="#work">Portfolio</a><a href="#session">The session</a><a href="family.html">Meet the Family</a><a href="dog-stories.html">Dog Stories</a><a href="#book">Get in touch</a></div></details>
     <button class="nav-book" type="button" data-open-contact>Book a session →</button>
   </nav>
   <main id="top">
@@ -130,7 +131,7 @@
 
     <section class="booking" id="book"><span class="eyebrow">05 / Let’s remember this</span><h2>You are their whole world.</h2><p>Their life may be only one chapter of yours. But to them, you are the whole story — the familiar voice, the favourite walk, the safe place, and the person they wait for at the door.</p><p>Let’s keep a little piece of this beautiful chapter, exactly as it is now.</p><button class="button" type="button" data-open-contact>Start an inquiry →</button><p class="fine-print">Calgary and surrounding area · Sessions are tailored to your dog.</p></section>
   </main>
-  <footer class="footer"><span>GOOD DOG STUDIO © 2026</span><span>CALGARY, ALBERTA · DOG PORTRAITURE</span></footer>
+  <footer class="footer"><span>DOG STORIES BY MAX © 2026</span><span>CALGARY, ALBERTA · DOG PORTRAITURE</span></footer>
   <div class="contact-modal" id="contact-modal" aria-hidden="true">
     <section class="contact-card" role="dialog" aria-modal="true" aria-labelledby="contact-title">
       <button class="modal-close" type="button" aria-label="Close inquiry panel" data-close-contact>×</button>
