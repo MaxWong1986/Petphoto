@@ -61,6 +61,8 @@
     .all-grid figure { break-inside:avoid; margin:0 0 13px; overflow:hidden; border-radius:3px; background:var(--warm); }
     .all-grid img { width:100%; height:auto; display:block; transition:transform .55s ease; }
     .all-grid figure:hover img { transform:scale(1.03); }
+    .photo img,.all-grid img { cursor:zoom-in; }
+    .gallery-open { display:block; width:100%; padding:0; border:0; background:transparent; cursor:zoom-in; }
     .session { background:var(--sage); padding:clamp(82px,11vw,145px) clamp(22px,7vw,112px); }
     .session-inner { max-width:1210px; margin:0 auto; display:grid; grid-template-columns:1fr .9fr; align-items:center; gap:clamp(45px,9vw,140px); }
     .session h2 { margin:16px 0 24px; }
@@ -97,6 +99,10 @@
     .copy-email { width:100%; padding:14px; border:1px solid var(--ink); background:var(--ink); color:var(--white); font:500 13px "DM Sans",system-ui,sans-serif; cursor:pointer; }
     .contact-status { min-height:22px; margin:14px 0 0!important; color:var(--sage-deep)!important; font-size:13px; }
     .modal-close { position:absolute; right:15px; top:14px; width:36px; height:36px; border:0; background:transparent; color:var(--muted); font-size:27px; cursor:pointer; }
+    .lightbox { position:fixed; inset:0; z-index:40; display:none; align-items:center; justify-content:center; padding:28px; background:rgba(18,25,21,.92); cursor:zoom-out; }
+    .lightbox.is-open { display:flex; }
+    .lightbox img { display:block; max-width:min(94vw,1500px); max-height:88vh; width:auto; height:auto; object-fit:contain; border-radius:3px; box-shadow:0 20px 70px rgba(0,0,0,.45); cursor:default; }
+    .lightbox-close { position:absolute; top:18px; right:22px; width:45px; height:45px; border:0; border-radius:50%; background:rgba(255,253,250,.95); color:var(--ink); font-size:29px; line-height:1; cursor:pointer; }
     @media (max-width:760px) {
       .nav { height:67px; padding:0 21px; } .nav-links { display:none; } .brand { font-size:21px; } .nav-book { padding:10px 12px; font-size:12px; } .mobile-menu { display:block; position:relative; margin-left:auto; margin-right:10px; } .mobile-menu summary { cursor:pointer; list-style:none; color:var(--ink); font-size:12px; font-weight:600; } .mobile-menu summary::-webkit-details-marker { display:none; } .mobile-menu > div { position:absolute; right:-10px; top:28px; width:190px; padding:16px; display:grid; gap:14px; background:var(--white); border:1px solid var(--line); border-radius:4px; box-shadow:0 16px 35px rgba(38,53,46,.13); font-size:13px; } .mobile-menu a:hover { color:var(--sage-deep); }
       .hero { min-height:auto; padding:31px 22px 65px; grid-template-columns:1fr; gap:34px; } .hero-copy { order:2; padding:0; } .hero h1 { font-size:54px; } .hero-image { order:1; min-height:390px; height:58vh; border-radius:110px 110px 12px 12px; }
@@ -145,9 +151,13 @@
       <p class="contact-status" aria-live="polite"></p>
     </section>
   </div>
+  <div class="lightbox" id="gallery-lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close enlarged image">×</button>
+    <img id="lightbox-image" src="" alt="">
+  </div>
   <script>
-    const allPhotos = ["001-clean.jpg","074F419E7ED1-clean.jpg","200597C5526D-clean.jpg","24C0065714C7-clean.jpg","55555-clean.jpg","A8315258AF65-clean.jpg","BD75438EB173-clean.jpg","E328AD829BB3-clean.jpg"];
-    document.getElementById("all-grid").innerHTML = allPhotos.map((photo, index) => `<figure><img src="${photo}?v=20260731-1" alt="Calgary dog portrait ${index + 1}" loading="lazy"></figure>`).join("");
+    const allPhotos = ["001.jpg","002.jpg","003.jpg","004.jpg","005.jpg","074F419E7ED1_CAMERAMARK.jpg","111111.jpg","200597C5526D_CAMERAMARK.jpg","2222.jpg","24C0065714C7_CAMERAMARK.jpg","333.jpg","44444.jpg","4497058F9955_CAMERAMARK.jpg","45CCB0DDF0EC_CAMERAMARK.jpg","474D3DFD80CD_CAMERAMARK.jpg","51425A0F2F34_CAMERAMARK.jpg","55555.jpg","60A57DB28BCB_CAMERAMARK.jpg","66666.jpg","6AD627539014_CAMERAMARK.jpg","7CC1A5325928_CAMERAMARK.jpg","7D91AE5E6173_CAMERAMARK.jpg","812BDDA9DA06_CAMERAMARK.jpg","89A7842CB16F_CAMERAMARK.jpg","8D7D259F04C9_CAMERAMARK.jpg","8FBFA24B81B4_CAMERAMARK.jpg","95F57EDA4999_CAMERAMARK.jpg","97C78CDF08E3_CAMERAMARK.jpg","999ED65CDDF4_CAMERAMARK.jpg","9CDA18D56D5B_CAMERAMARK.jpg","9D6237734A10_CAMERAMARK.jpg","A0676BDA7190_CAMERAMARK.jpg","A6C62670F3D6_CAMERAMARK.jpg","A7FB7541EB79_CAMERAMARK.jpg","A8315258AF65_CAMERAMARK.jpg","AB030A694753_CAMERAMARK.jpg","B080E1BE93D9_CAMERAMARK.jpg","B1972D1C9438_CAMERAMARK.jpg","B388A9D1F560_CAMERAMARK.jpg","B6DA0F4D489A_CAMERAMARK.jpg","B9D39D2EA825_CAMERAMARK.jpg","BD63308A30C9_CAMERAMARK.jpg","BD75438EB173_CAMERAMARK.jpg","BEF3FD7829E8_CAMERAMARK.jpg","C0993EC31A5A_CAMERAMARK.jpg","C2BC8919900F_CAMERAMARK.jpg","C389BCE6630C_CAMERAMARK.jpg","D9A0D52EC7FE_CAMERAMARK.jpg","DAE006186BD1_CAMERAMARK.jpg","E328AD829BB3_CAMERAMARK.jpg","EDC94B6A49E9_CAMERAMARK.jpg","F68B8940D088_CAMERAMARK.jpg","F6F37699B0F4_CAMERAMARK.jpg"];
+    document.getElementById("all-grid").innerHTML = allPhotos.map((photo, index) => `<figure><button class="gallery-open" type="button" data-full="site/assets/${photo}?v=20260731-3" data-alt="Calgary dog portrait ${index + 1}"><img src="site/assets/${photo}?v=20260731-3" alt="Calgary dog portrait ${index + 1}" loading="lazy"></button></figure>`).join("");
     const contactModal = document.getElementById("contact-modal");
     const contactStatus = contactModal.querySelector(".contact-status");
     const copyEmail = document.getElementById("copy-email");
@@ -165,6 +175,15 @@
         contactStatus.textContent = "Copy failed — please copy the email address above.";
       }
     });
+    const lightbox = document.getElementById("gallery-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const openLightbox = (source, alt) => { lightboxImage.src = source; lightboxImage.alt = alt; lightbox.classList.add("is-open"); lightbox.setAttribute("aria-hidden", "false"); };
+    const closeLightbox = () => { lightbox.classList.remove("is-open"); lightbox.setAttribute("aria-hidden", "true"); lightboxImage.src = ""; };
+    document.querySelectorAll(".gallery-open").forEach((button) => button.addEventListener("click", () => openLightbox(button.dataset.full, button.dataset.alt)));
+    document.querySelectorAll(".photo img").forEach((image) => image.addEventListener("click", () => openLightbox(image.currentSrc || image.src, image.alt)));
+    lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox(); });
   </script>
 </body>
 </html>
