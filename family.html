@@ -34,6 +34,7 @@
   <script>
     const buddyPhotos = ["01","02","03","04","05","06","07","09","10","11","12","13"].map((number) => ({src:`family/buddy/buddy-${number}.jpg`,alt:`Buddy — family photo ${number}`}));
     const charliePhotos = ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17"].map((number) => ({src:`family/charlie/charlie-${number}.jpg`,alt:`Charlie and Buddy — family photo ${number}`}));
+    const buddyGallery = document.querySelector('.buddy-gallery');
     const buddyLightbox = document.getElementById('buddy-lightbox');
     const buddyLightboxImage = buddyLightbox.querySelector('img');
     const buddyLightboxClose = buddyLightbox.querySelector('button');
