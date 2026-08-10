@@ -78,6 +78,30 @@
     .stories-heading p { margin: 0; color: #536158; font-size: 17px; line-height: 1.8; }
 
     .story-list { display: grid; gap: clamp(28px, 5vw, 58px); }
+    .wally-story {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+      align-items: center;
+      gap: clamp(34px, 6vw, 76px);
+      padding: clamp(22px, 4vw, 50px);
+      background: var(--sage);
+      border: 1px solid #d2ddd0;
+      border-radius: 7px;
+    }
+    .wally-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .wally-photo { margin: 0; overflow: hidden; background: var(--warm); border-radius: 5px; }
+    .wally-photo--portrait { aspect-ratio: 3 / 4; }
+    .wally-photo--wide { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+    .wally-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .wally-photo--wide img { object-fit: contain; background: #eef2ea; }
+    .wally-copy { max-width: 470px; }
+    .wally-copy h3 {
+      margin: 15px 0 20px;
+      font: 500 clamp(38px, 4.5vw, 58px)/1.04 "Playfair Display", serif;
+      letter-spacing: -.055em;
+    }
+    .wally-copy p { margin: 0; color: #4d5d52; font-size: 15px; line-height: 1.86; }
+    .wally-copy p + p { margin-top: 15px; }
     .story-card {
       display: grid;
       grid-template-columns: minmax(260px, .78fr) minmax(330px, 1.22fr);
@@ -193,6 +217,13 @@
       .stories-heading { margin-bottom: 38px; padding: 0 10px; }
       .stories-heading p { font-size: 16px; }
       .story-list { gap: 24px; }
+      .wally-story {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 34px;
+        padding: 18px 18px 34px;
+      }
+      .wally-copy { padding: 0 5px; }
+      .wally-copy h3 { font-size: clamp(38px, 11vw, 48px); }
       .story-card, .story-card:nth-child(even) {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas: "film" "copy";
@@ -231,6 +262,29 @@
         </header>
 
         <div class="story-list">
+          <article class="wally-story" aria-labelledby="wally-story-heading">
+            <div class="wally-gallery">
+              <figure class="wally-photo wally-photo--portrait">
+                <img src="wally-outdoor.jpg" width="896" height="1195" loading="lazy" alt="Wally, a cream Goldendoodle, sitting outside in a bright green harness">
+              </figure>
+              <figure class="wally-photo wally-photo--portrait">
+                <img src="wally-rope.jpg" width="1350" height="1800" loading="lazy" alt="Wally holding a blue-and-green rope toy close to the camera">
+              </figure>
+              <figure class="wally-photo wally-photo--wide">
+                <img src="wally-three-prints.jpg" width="1800" height="2400" loading="lazy" alt="Three small printed photographs of Wally displayed together on the family dining table">
+              </figure>
+            </div>
+            <div class="wally-copy">
+              <span class="eyebrow">Wally · A first Rover visit in Calgary</span>
+              <h3 id="wally-story-heading">He greeted me like we already knew each other.</h3>
+              <p>Some dogs need time to decide whether you belong. Wally only needed to hear his name.</p>
+              <p>This was my first Rover booking in Calgary. I had barely stepped through the front door when the five-year-old Goldendoodle ran over, took in my scent and kissed my face as though we were already friends. After his family left, I simply stayed with him. We played until he forgot about the camera and became completely himself — calm and attentive outside, then joyfully determined with his blue-and-green rope.</p>
+              <p>I had planned to leave one photograph. Then I saw the way he sat on our walk. Then that face around the rope. One print quietly became three.</p>
+              <p>When his family returned, I told them I had a surprise. His person looked at the photographs and asked, “How much?” I told them the three prints were free. I only wanted the family to have a happy memory of an ordinary afternoon with the dog they love.</p>
+              <p>I hope Wally keeps greeting the world exactly as he greeted me: with his whole heart.</p>
+            </div>
+          </article>
+
           <article class="story-card">
             <div class="story-film">
               <button class="story-film-play" type="button" data-video-id="qoSRA-hdaok" data-embed="https://www.youtube-nocookie.com/embed/qoSRA-hdaok?autoplay=1&amp;rel=0" data-title="Surprise No. 01 — Before the moment disappeared" aria-label="Play Surprise No. 01: Before the moment disappeared">
